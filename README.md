@@ -1,2 +1,2 @@
 # planit Jupiter-Toys
-Built on cucumber with a twisted page object model design pattern.
+Solution is built on 'Cucumber Framework' with a twisted page object model design pattern.
