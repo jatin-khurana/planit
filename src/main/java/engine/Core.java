@@ -52,19 +52,27 @@ public class Core {
 
     @Before(order = 2)
     public void initializeDriver() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-        DesiredCapabilities caps = DesiredCapabilities.chrome();
-        caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+        if (properties.getProperty("BROWSER").equalsIgnoreCase("Chrome")) {
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+            DesiredCapabilities caps = DesiredCapabilities.chrome();
+            caps.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote--allow-origins=*");
-        options = new ChromeOptions();
-        options.setHeadless(false);
-        options.addArguments("--start-maximized");
-        options.merge(caps);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote--allow-origins=*");
+            options = new ChromeOptions();
+            options.setHeadless(false);
+            options.addArguments("--start-maximized");
+            options.merge(caps);
 
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
+            driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
+        } else if (properties.getProperty("BROWSER").equalsIgnoreCase("Firefox")) {
+            /*Firefox Browser initialization*/
+        } else if (properties.getProperty("BROWSER").equalsIgnoreCase("Safari")) {
+            /*Safari Browser initialization*/
+        } else {
+            throw new RuntimeException("Please provide a valid browser name.");
+        }
     }
 
     @Before(order = 3)
@@ -76,6 +84,4 @@ public class Core {
     public void quitBrowser() {
         driver.quit();
     }
-
-
 }
