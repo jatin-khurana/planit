@@ -1,0 +1,7 @@
+locators/CommonLocators.class
+locators/HomePageLocators.class
+engine/Core.class
+locators/ShopPageLocators.class
+locators/CartPageLocators.class
+engine/Utilities.class
+locators/ContactLocators.class
