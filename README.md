@@ -3,8 +3,14 @@ Solution is built on 'Cucumber Framework' with a twisted page object model desig
 It's very dynamic in nature. Users only need to touch the feature files & properties files, anyone without having any technical knowledge can run & understand this.
 for example:
 
-1. I have leveraged Cucumber's Datatables which are dynamic in nature, you just need add or remove records & your contact creation is done.
-2. "Given Buy "2-Stuffed Frog, 5-Fluffy Bunny, 3-Valentine Bear"" Now In this change the number & Toy name, and it will add to cart dynamically. for example "Given Buy "10-Smiley Face, 5-Valentine Bear"" & we are done.
+1. I have leveraged Cucumber's Datatables which are dynamic in nature, you just need add or remove records & your contact creation is done. for example 
+    And Populate mandatory fields, submit & Validate successful submission message
+      | Forename | Email                   | Message                                                                                            |
+      | Jatin    | jatinkhuranna@gmail.com | Jupiter toys are awesome.                                                                          |
+      | Mark     | mark@nz.com             | Quality is not good. I would like to return my Fluffy Bunny, please refund.                        |
+
+
+3. "Given Buy "2-Stuffed Frog, 5-Fluffy Bunny, 3-Valentine Bear"" Now In this change the number & Toy name, and it will add to cart dynamically. for example "Given Buy "10-Smiley Face, 5-Valentine Bear"" & we are done.
 
 
   Scenario: Test case #1
